@@ -15,7 +15,7 @@ HEIG=300
 class goku(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.goku= pygame.image.load(str(ruta())+"/gokuCar/gokri.png")
+        self.goku= pygame.image.load("gokri.png")
         self.rect=self.goku.get_rect()
         self.rect.centerx=WID/2
         self.rect.centery=HEIG/2       
@@ -46,23 +46,23 @@ class goku(pygame.sprite.Sprite):
         for teclas_precionadas in teclas:
             if teclas_precionadas==K_LEFT:
                 self.rect.centerx-=self.velocidad_movimiento+100
-                self.goku=pygame.image.load(str(ruta())+"/gokuCar/gokuleft.png")
+                self.goku=pygame.image.load("gokuleft.png")
             if teclas_precionadas==K_RIGHT:
                 self.rect.centerx+=self.velocidad_movimiento+10
-                self.goku=pygame.image.load(str(ruta())+"/gokuCar/gokri.png")
+                self.goku=pygame.image.load("gokri.png")
             elif teclas_precionadas==K_DOWN:
                 self.rect.centery+=self.velocidad_movimiento
-                self.goku=pygame.image.load(str(ruta())+"/gokuCar/gokudown.png")
+                self.goku=pygame.image.load("gokudown.png")
             elif teclas_precionadas==K_UP:
                 self.rect.centery-=self.velocidad_movimiento
-                self.goku=pygame.image.load(str(ruta())+"/gokuCar/gokuup.png")
+                self.goku=pygame.image.load("gokuup.png")
 
             ventana.blit(self.goku,self.rect)
         ventana.blit(self.goku,self.rect)    
 
 class cameHaa(pygame.sprite.Sprite):
     def __init__(self,x,y):
-        self.came=pygame.image.load(str(ruta())+"/spriteDisparo/kame.gif")
+        self.came=pygame.image.load("kame.gif")
         self.came_haa_imagen=pygame.transform.scale(self.came,(12,12))
 
         self.rect=self.came_haa_imagen.get_rect()
@@ -112,7 +112,7 @@ def main():
             ##teclas presionadas
             elif event.type==pygame.KEYDOWN:
                 if event.key==pygame.K_SPACE:
-                    muneco1.goku=pygame.image.load(str(ruta())+"/gokuCar/kame.png")        
+                    muneco1.goku=pygame.image.load("kame.png")        
                     detener_si_se_dipara=True
 
                     print(muneco1.rect.centerx,muneco1.rect.centery)
@@ -126,7 +126,7 @@ def main():
             
             ##teclas soltadas 
             elif event.type==pygame.KEYUP:
-                muneco1.goku=pygame.image.load(str(ruta())+"/gokuCar/gokri.png")
+                muneco1.goku=pygame.image.load("gokri.png")
                 
                 if event.key==K_SPACE:
                     detener_si_se_dipara=False
